@@ -36,8 +36,7 @@ public class Aluno extends Pessoa {
 	}
 
 	/*
-	 * Metodos Setters[setar dados,receber ou adicionar] e Getters[retornar
-	 * dados,regastar ou obter o valor dos atributos] do objeto
+	 * Metodos Setters[setar dados,receber ou adicionar] e Getters[retornar dados,regastar ou obter o valor dos atributos] do objeto
 	 */
 	public String getSerieMatriculado() {
 		return serieMatriculado;

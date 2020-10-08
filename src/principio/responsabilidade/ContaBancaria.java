@@ -3,7 +3,7 @@ package principio.responsabilidade;
 public class ContaBancaria {
 
 	private String descricao;
-	private double saldo = 8000;
+	private double saldo = 10000;
 
 	public void soma100reais() {
 		saldo += 100;
