@@ -1,8 +1,12 @@
 package cursojava.classes;
+
+import java.util.Arrays;
+
 /*classe disciplina servirá para todos os objetos e instacias da disciplina*/
 public class Disciplina {
 
-	private double nota;
+	/*cada disciplina terá 4 notas  durante o ano inteiro(18/10/2020 editada atributos para array)*/
+	private double[] nota= new double [4];
 	private String disciplina;
 
 	public String getDisciplina() {
@@ -13,22 +17,35 @@ public class Disciplina {
 		this.disciplina = disciplina;
 	}
 
-	public double getNota() {
+	
+
+	public double[] getNota() {
 		return nota;
 	}
 
-	public void setNota(double nota) {
+	public void setNota(double[] nota) {
 		this.nota = nota;
 	}
+
+
+	public double getMediaNotas() {
+		
+		double somaTotal = 0;
+		for (int pos = 0; pos < nota.length; pos++) {
+			somaTotal += nota[pos];
+			
+		}
+	return somaTotal/nota.length;
+	}
+	
+	
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((disciplina == null) ? 0 : disciplina.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(nota);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + Arrays.hashCode(nota);
 		return result;
 	}
 
@@ -46,7 +63,7 @@ public class Disciplina {
 				return false;
 		} else if (!disciplina.equals(other.disciplina))
 			return false;
-		if (Double.doubleToLongBits(nota) != Double.doubleToLongBits(other.nota))
+		if (!Arrays.equals(nota, other.nota))
 			return false;
 		return true;
 	}
